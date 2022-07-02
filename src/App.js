@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button } from 'antd';
+import { Button, Collapse } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
+import User from './Components/User'
+import Group from './Components/Group'
+import Roles from './Components/Roles'
 
-function App() {
+
+const { Panel } = Collapse;
+
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -14,9 +20,20 @@ function App() {
             react-namedstate
           </Button>
         </p>
+        <p>
+          <Collapse>
+            <Panel header="User info" key="1">
+              <User/>
+            </Panel>
+            <Panel header="Group" key="2">
+              <Group/>
+            </Panel>
+            <Panel header="Roles" key="3">
+              <Roles/>
+            </Panel>
+          </Collapse>
+        </p>
       </header>
     </div>
   );
 }
-
-export default App;
