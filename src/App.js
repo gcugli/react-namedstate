@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import { Button, Collapse } from 'antd';
-import { GithubOutlined } from '@ant-design/icons';
+import logo from './logo.svg'
+import './App.css'
+import { Button, Collapse } from 'antd'
+import { GithubOutlined } from '@ant-design/icons'
+import Auth from './Components/Auth'
 import User from './Components/User'
 import Group from './Components/Group'
 import Roles from './Components/Roles'
 
-
-const { Panel } = Collapse;
+const { Panel } = Collapse
 
 export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           <Button icon={<GithubOutlined />}
             href="https://github.com/gcugli/react-namedstate" target="_blank">
             react-namedstate
           </Button>
+        </p>
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          <Auth/>
         </p>
         <p>
           <Collapse>
@@ -35,5 +38,5 @@ export default function App() {
         </p>
       </header>
     </div>
-  );
+  )
 }

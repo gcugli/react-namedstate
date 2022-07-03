@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NamedStateProvider, { setInitialState } from './NamedStateHook'
+import initialState from './data'
+
+setInitialState(initialState)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <NamedStateProvider>
+      <App />
+    </NamedStateProvider>
   </React.StrictMode>
 );
 
