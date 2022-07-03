@@ -37,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+.renderCnt {
+  color: #878787;
+  font-size: 12px;
+}

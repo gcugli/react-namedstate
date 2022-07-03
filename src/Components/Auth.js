@@ -3,7 +3,7 @@ import { useNamedState } from '../NamedStateHook'
 
 const { Option } = Select
 
-export default function Auth() {
+export default function AuthSelect() {
   const [auth, setAuth] = useNamedState(false,'auth')
   const [users] = useNamedState({},'users')
 

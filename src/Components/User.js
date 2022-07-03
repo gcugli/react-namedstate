@@ -1,17 +1,23 @@
+import { Card } from 'antd'
 import { useNamedState } from '../NamedStateHook'
 
-export default function User() {
+let renderCnt = 0
+
+export default function UserCard() {
   const [userId] = useNamedState(false,'auth','user','uid')
   const [userName] = useNamedState('Guest','users',userId,'name')
   const [mailName] = useNamedState('N/A','users',userId,'mail')
 
+  renderCnt++;
+
   return (
-    <p>
-      <i>name</i>: {userName} <br/>
-      <i>mail</i>: {mailName} 
+    <Card title="User" bordered={true} >
+      <b>{userName}</b><br/><i>{mailName}</i> 
       { userId && 
-        <><br/> <i>userId</i>: {userId}</>
+        <><br/> <i>@{userId}</i></>
       }
-    </p>
+      <br/><br/>
+      <span class="renderCnt">render {renderCnt}</span>
+    </Card>
   )
 }

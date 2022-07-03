@@ -1,13 +1,13 @@
 import logo from './logo.svg'
 import './App.css'
-import { Button, Collapse } from 'antd'
+import { Button, Card, Col, Row, Divider } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
-import Auth from './Components/Auth'
-import User from './Components/User'
-import Group from './Components/Group'
-import Roles from './Components/Roles'
+import AuthSelect from './Components/Auth'
+import UserCard from './Components/User'
+import GroupCard from './Components/Group'
+import RolesCard from './Components/Roles'
+import StaticCard from './Components/StaticCard'
 
-const { Panel } = Collapse
 
 export default function App() {
   return (
@@ -20,22 +20,29 @@ export default function App() {
           </Button>
         </p>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <Auth/>
+        <p style={{marginBottom:'60px'}}>
+          <AuthSelect/>
         </p>
-        <p>
-          <Collapse>
-            <Panel header="User info" key="1">
-              <User/>
-            </Panel>
-            <Panel header="Group" key="2">
-              <Group/>
-            </Panel>
-            <Panel header="Roles" key="3">
-              <Roles/>
-            </Panel>
-          </Collapse>
-        </p>
+        <div className="site-card-wrapper">
+          <Row gutter={[16, 32]}>
+            <Col span={12}>
+              <UserCard/>
+            </Col>
+            <Col span={12}>
+              <RolesCard/>
+            </Col>
+          </Row>
+          <Divider></Divider>
+          <Row gutter={[16, 32]}>
+            <Col span={12}>
+              <GroupCard/>
+            </Col>
+            <Col span={12}>
+              <StaticCard/>
+            </Col>
+          </Row>
+          <Divider></Divider>
+        </div>
       </header>
     </div>
   )

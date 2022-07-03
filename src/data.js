@@ -35,5 +35,10 @@ export default {
 		Editor: [3,2],
 		Designer: [3,2],
 		Viewer: [3,2,1],
+	},
+	test: {
+		static: {
+			text: 'Static content.\nComponent should not be updated.'
+		}
 	}
 }
